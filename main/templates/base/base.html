@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Bokeh Embed | {% block title %}{% endblock title %}</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css"
+      href="{{ url_for('static', filename='css/tailwind.min.css') }}"/>
+    <link
+      href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap"
+      rel="stylesheet"/>
+    <!-- <link href="http://cdn.bokeh.org/bokeh/release/bokeh-1.4.0.min.css" rel="stylesheet" type="text/css">
+	<link href="http://cdn.bokeh.org/bokeh/release/bokeh-widgets-1.4.0.min.css" rel="stylesheet" type="text/css"> -->
+    <script
+      src="{{ url_for('static',filename='js/bokeh-2.0.0.min.js') }}"
+      type="text/javascript"
+    ></script>
+    <!-- <script src="http://cdn.bokeh.org/bokeh/release/bokeh-1.4.0.min.js"></script> -->
+    {% block bokeh_scripts %}{% endblock bokeh_scripts %} 
+    {% block stylesheets %}{% endblock stylesheets %}
+  </head>
+
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+
+    <div class="bg-gray-300">      
+      {% block content %}{%endblock content %}
+      <p class="footer text-center text-gray-700 text-xs non-printable">
+        &copy;2020 James Mukuya Okinda. All rights reserved.
+      </p>
+    </div>
+    <!-- CUSTOM SCRIPT -->
+    {% block scripts %}{% endblock scripts %}
+  </body>
+</html>
