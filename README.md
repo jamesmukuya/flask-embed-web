@@ -1,3 +1,6 @@
 # flask-embed-bokeh
-Hello family, this example will show you how to embed Bokeh plots in flask/django.
-You will learn how to create a single graph and several graphs using loops and implement a simple html tooltip
+Hello family,
+This example will show you how to embed interactive Bokeh plots in flask/django.
+You will learn how to create a graph and implement a simple html tooltip.
+No custom js is included.
+I have used tailwindcss for basic styling.

@@ -1,14 +1,27 @@
 {% extends "base/base.html" %}
 {% block title %} {{title}} {% endblock title %}
+
+<!-- BOKEH SCRIPTS -->
+<!--
+extend the bokeh script from base.html
+we also need to escape the rendered script object using 'safe'
+-->
+{% block bokeh_scripts %}
+{{line_script|safe}}
+{% endblock bokeh_scripts %}
+<!-- BOKEH SCRIPTS -->
+
 {% block content %}
 
 <div class="flex sm:w-auto">
 	<div class="flex flex-col bg-gray-400 px-2 rounded shadow-lg">
-		<!-- graph 1-->
-		<div class="">
-			<div class="">
-				
-			</div>
+		<!-- graphs-->
+		<div class="my-2 py-2 lg:pl-16 lg:w-screen md:w-full sm:w-1/2">
+			<!-- graph 1-->
+				<!--
+					pass the rendered div object and escape using 'safe'
+				-->
+				{{line_div|safe}}
 		</div>
 	</div>
 </div>
