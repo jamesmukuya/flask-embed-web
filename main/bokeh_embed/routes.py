@@ -15,7 +15,7 @@ from bokeh.embed import components
 from bokeh.models import ColumnDataSource
 
 # TOOLTIPS IMPORT
-#from products.tooltips import tooltips
+from main.tooltips.tooltips import Tooltips
 
 def read_file():
 	"""
@@ -42,13 +42,15 @@ def generate_bokeh_graph():
 	df = read_file()
 	# PLOT THE FIGURE
 	source = ColumnDataSource(data=df)
-	#tooltip = Tooltips
-	#tools = [tooltip.flight_profile_2d(), 'tap', 'save', 'pan',
-          #'wheel_zoom', 'reset']
+	# INITIALIZE TOOLTIPS CLASS
+	tooltip = Tooltips
+	tools = [tooltip.profile_2d(None), 'tap', 'save', 'pan',
+          'wheel_zoom', 'reset']
 
 	# CREATE FIGURE INSTANCE WITH DATETIME AS X AXIS
-	fig = figure(x_axis_type='datetime', plot_width=800,
-	             plot_height=400,)  # tools=tools)
+	# PASS THE TOOLS OBJECT IN THE FIGURE OBJECT
+	fig = figure(x_axis_type='datetime', plot_width=900,
+	             plot_height=600, tools=tools)
 
 	# SOME FIGURE SETTINGS
 	fig.title.text = "BOKEH PLOT"
